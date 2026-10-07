@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaurav-sharma-02.github.io/sitemap.xml
