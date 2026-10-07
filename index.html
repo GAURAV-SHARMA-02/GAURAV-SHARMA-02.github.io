@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gaurav Sharma — Software Engineer</title>
+<meta name="description" content="Software engineer with five years across distributed backends in Java, Kotlin and .NET, React and Node on the front end, and AI agents that fix production bugs.">
+<meta name="theme-color" content="#05070E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gaurav Sharma — Software Engineer">
+<meta property="og:description" content="Five years building systems that stay up, stay fast, and fix themselves.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- The 3D system lives behind everything; content scrolls over it. -->
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<div id="loader" class="loader">
+  <div class="loader__bar"><span></span></div>
+  <p class="loader__text">initialising system</p>
+</div>
+
+<header class="nav">
+  <a class="nav__mark" href="#top" aria-label="Gaurav Sharma — home">
+    <span class="nav__dot" aria-hidden="true"></span> GS
+  </a>
+  <nav class="nav__links">
+    <a href="#work">Work</a>
+    <a href="#system">System</a>
+    <a href="#skills">Capabilities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav__cta" id="resume-link" href="#" download>Résumé</a>
+</header>
+
+<main id="top">
+
+  <!-- ─────────────────────────── HERO ─────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero__inner">
+      <p class="eyebrow" data-reveal>
+        <span class="pulse" aria-hidden="true"></span>
+        <span id="hero-location"></span>
+      </p>
+
+      <h1 class="hero__title" data-reveal data-reveal-delay="60">
+        <span class="line"><span id="hero-name"></span></span>
+        <span class="line serif" id="hero-role"></span>
+      </h1>
+
+      <p class="hero__lede" data-reveal data-reveal-delay="140" id="hero-tagline"></p>
+      <p class="hero__intro" data-reveal data-reveal-delay="200" id="hero-intro"></p>
+
+      <div class="hero__actions" data-reveal data-reveal-delay="260">
+        <a class="btn btn--primary" href="#work">
+          See the work <span aria-hidden="true">↓</span>
+        </a>
+        <a class="btn" id="hero-github" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" id="hero-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-line"></span> scroll
+    </div>
+  </section>
+
+  <!-- ───────────────────────── METRICS ────────────────────────── -->
+  <section class="metrics" aria-label="Impact at a glance">
+    <ul class="metrics__grid" id="metrics-grid"></ul>
+  </section>
+
+  <!-- ─────────────────────────── WORK ─────────────────────────── -->
+  <section class="section" id="work">
+    <div class="section__head" data-reveal>
+      <p class="section__index">01</p>
+      <h2 class="section__title">Where I've built things</h2>
+      <p class="section__sub">
+        Three companies, backend through front end, one throughline: take
+        something slow and fragile and make it fast and boring.
+      </p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ────────────────────────── SYSTEM ────────────────────────── -->
+  <section class="section section--system" id="system">
+    <div class="section__head" data-reveal>
+      <p class="section__index">02</p>
+      <h2 class="section__title">The system behind the agent</h2>
+      <p class="section__sub">
+        The thing I'm proudest of: an autonomous loop that watches production,
+        reasons about what broke, and ships the fix. Hover any node.
+      </p>
+    </div>
+
+    <div class="sysmap" id="sysmap" data-reveal>
+      <div class="sysmap__stage" id="sysmap-stage" role="img"
+           aria-label="Architecture diagram of the autonomous bug-resolution agent"></div>
+      <aside class="sysmap__panel" id="sysmap-panel">
+        <p class="sysmap__hint">Hover or tap a node to inspect it.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ────────────────────────── SKILLS ────────────────────────── -->
+  <section class="section" id="skills">
+    <div class="section__head" data-reveal>
+      <p class="section__index">03</p>
+      <h2 class="section__title">Capabilities</h2>
+      <p class="section__sub">What I reach for, roughly in order of how often I reach for it.</p>
+    </div>
+    <div class="skills" id="skills-grid"></div>
+  </section>
+
+  <!-- ───────────────────────── CONTACT ────────────────────────── -->
+  <section class="section section--contact" id="contact">
+    <div class="contact" data-reveal>
+      <p class="section__index">04</p>
+      <h2 class="contact__title serif">Let's talk.</h2>
+      <p class="contact__body">
+        The problems I want next: distributed systems at a scale where the
+        architecture actually matters, data infrastructure, or putting AI to real
+        work in production rather than in a demo.
+      </p>
+      <a class="contact__mail" id="contact-email" href="#"></a>
+      <div class="contact__links">
+        <a id="contact-github" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a id="contact-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="contact-resume" href="#" download>Résumé (PDF)</a>
+        <a href="./Gaurav-Sharma-Resume.docx" download>Résumé (DOCX)</a>
+      </div>
+      <p class="contact__edu" id="contact-edu"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Gaurav Sharma</span>
+  <span class="footer__note">Hyderabad, India</span>
+</footer>
+
+<button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">
+  <span class="motion-toggle__dot" aria-hidden="true"></span>
+  <span id="motion-toggle-label">Motion on</span>
+</button>
+
+<script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
